@@ -1,0 +1,76 @@
+.fondo{
+    background-image: url(../../../assets/img/FondoPrincipal_Oscuro.png);
+    background-size: 100% 100%;  
+    text-align: center;
+
+    flex: 0 0 auto;
+    margin-bottom: 0;
+}
+
+p{
+    margin: 1px 0;
+}
+.imagen{
+    border-radius: 50%;
+    height: 45px;
+    width:45px;
+    margin-left: 10px;
+    border: 4px solid;
+    border-image-slice: 1;
+	border-width: 1px;
+	border-color: #2ebfa5;
+}
+.titulo{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 21px;
+}
+.info{
+    font-size: 20px;
+}
+.bi-facebook:hover{
+    color: blue !important;
+}
+  
+.bi-instagram:hover{
+    color: violet !important;
+}
+  
+.bi-twitter:hover{
+    color: rgb(91, 160, 187) !important;
+}
+.bi-github:hover{
+    color: rgb(255, 255, 255) !important;
+}
+.bi-linkedin:hover{
+    color: rgb(7, 7, 7) !important;
+}
+i{
+    color: rgb(255, 238, 0);
+    padding-right: 5px;
+}
+
+.oscuro i{
+    color:rgb(67, 1, 143);
+    padding-right: 5px;
+}
+.oscuro{
+    background-color: darkgoldenrod;
+}
+.oscuro.fondo{
+    background-image: url(../../../assets/img/fondoPrincipal_Normal.png);
+    background-size: 100% 100%;  
+    text-align: center;
+    position:relative;
+    bottom: 0;
+}
+.oscuro .imagen{
+    border-radius: 50%;
+    height: 45px;
+    width:45px;
+    margin-left: 10px;
+    border: 4px solid;
+    border-image-slice: 1;
+	border-width: 1px;
+	border-color: #eb1d0f;
+}

@@ -1,0 +1,157 @@
+<div *ngIf="info" [ngClass]="{'oscuro':oscuro}">
+<h2>Hard Skills & Soft Skills <a href="#" class="icono crear" (click)="inicializar()" data-bs-toggle="modal" data-bs-target="#crearSkill" *ngIf="Login" >
+<i class="bi bi-plus-circle-fill"></i>
+</a></h2>
+
+<div class="row" *ngIf="info.skill">
+    <div  *ngFor="let skills of info.skill, let i=index" class="col-sm-4 col-md-4 col-lg-4">
+     
+        <div [ngSwitch]="skills.nivel" id="borrar">
+        
+            <span *ngSwitchCase="'BASICO'">
+                <circle-progress
+                    [percent]="25"
+                    [radius]="85"
+                    [title]="skills.lenguaje.toUpperCase()"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleColor]="'rgb(255, 0, 200)'"
+                    [titleFontSize]="'1em'"
+                    [outerStrokeWidth]="8"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    >
+                </circle-progress>
+            </span>
+            <span *ngSwitchCase="'INTERMEDIO'">
+            
+                <circle-progress
+                    [percent]="50"
+                    [radius]="85"
+                    [title]="skills.lenguaje.toUpperCase()"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleColor]="'rgb(255, 0, 200)'"
+                    [titleFontSize]="'1em'"
+                    [outerStrokeWidth]="8"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    >
+                </circle-progress>
+            </span>
+            <span *ngSwitchDefault>
+        
+                <circle-progress
+                    [percent]="99"
+                    [radius]="85"
+                    [title]="skills.lenguaje.toUpperCase()"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleColor]="'rgb(255, 0, 200)'"
+                    [titleFontSize]="'1em'"
+                    [outerStrokeWidth]="8"
+                    [innerStrokeWidth]="2"
+                    [outerStrokeColor]="'#78C000'"
+                    [innerStrokeColor]="'#C7E596'"
+                    [animation]="true"
+                    [animationDuration]="600"
+                    >
+                </circle-progress>
+            </span>
+            <span *ngIf="Login">
+        <a href="#" class="iconos editar" data-bs-toggle="modal" data-bs-target="#editarSkill" (click)="editar_skill(skills)">
+            <i class="bi bi-pencil"></i>
+        </a>
+        <a href="#borrar" class="iconos borrar" (click)="borrarSkillId(skills)">
+            <i class="bi bi-trash-fill"></i>
+        </a>
+     </span>
+      </div>
+    </div>
+ 
+</div>
+
+
+
+  <div class="modal fade" id="crearSkill" tabindex="-1" aria-labelledby="crearSkillLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="crearSkillLabel">Crear: Experiencia</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="skillForm" (ngSubmit)="crearSkill()">
+              <div class="row">
+                <label class="form-label col-12">
+                  Lenguaje: <input type="text" class="form-control" formControlName="lenguaje" required>
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Nivel: 
+                  <select formControlName="nivel" class="form-control">
+                      <option [value]="n" *ngFor="let n of niveles">{{n}}</option>
+                  </select>
+                  
+                </label>
+              </div>
+ 
+              <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Crear</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<div class="modal fade" id="editarSkill" tabindex="-1" aria-labelledby="editarSkillLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarSkillLabel">Editar: Skill</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="skillForm" (ngSubmit)="editarSkill()">
+             
+              <div class="row">
+                <label class="form-label col-12">
+                    Lenguaje: <input type="text" class="form-control" formControlName="lenguaje">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Nivel: 
+                  <select formControlName="nivel" class="form-control">
+                    <option [value]="n" *ngFor="let n of niveles">{{n}}</option>
+                  </select>
+                </label>
+              </div>
+                
+                
+                 <br>
+                <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Editar</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

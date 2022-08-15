@@ -1,0 +1,100 @@
+
+<div *ngIf="info">
+  <div [ngClass]="{'oscuro':estado}">
+    <nav class="navbar navbar-expand-md fixed-top" [ngClass]="{'navbar-light bg-light':estado,'navbar-dark bg-dark':!estado}" ><!--navbar-dark bg-dark-->
+      <div class="container-fluid">
+        <img src="//argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1648503444/APLogo-20-20.png" alt="logo" class="logo">
+        <span style="color: white;">#YoProgramo </span>
+       <span style="margin: 0 0 0 2%;color: white;" *ngIf="login_out">{{info.personal?.nom}} {{info.personal?.ape}}</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"  ></span>
+        </button>
+        <div class="collapse navbar-collapse " id="menu" >
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="#">
+                <button class="modo" type="button" [ngClass]="{'active':estado}" (click)="modo()" >
+                  <span *ngIf="estado"><i class="bi bi-circle-fill circulo"></i><i class="bi bi-moon-fill luna"></i> </span>
+                  <span *ngIf="!estado"><i class="bi bi-brightness-high-fill sol"></i><i class="bi bi-circle-fill circulo"></i></span>              
+                </button>
+             
+              </a>
+            </li>
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="contacto" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span style="color: white;">Mis Redes</span> 
+              </a>
+              <ul class="dropdown-menu bg-info" aria-labelledby="contacto">
+                <li>
+                  <a class="dropdown-item " [href]="info?.personal?.redes?.facebook" target="_blank">
+                    <i class="bi bi-facebook"></i>Facebook
+
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item " [href]="info?.personal?.redes?.instagram" target="_blank">
+                    <i class="bi bi-instagram"></i>Instagram
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [href]="info?.personal?.redes?.twitter" target="_blank">
+                    <i class="bi bi-twitter"></i>Twitter
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" [href]="info?.personal?.redes?.github" target="_blank">
+                    <i class="bi bi-github"></i>Github
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item " [href]="info?.personal?.redes?.linkedin" target="_blank">
+                    <i class="bi bi-linkedin"></i>Linkedin
+
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#pdf" (click)="descargarPdf($event)" class="desc">Descargar Perfil</a> </li>
+            <li class="nav-item">
+              <button [attr.data-bs-toggle]="testM" data-bs-target="#Login"  class="btn btn-success"  [ngClass]="{'login':login_out}" (click)="logout()"><span *ngIf="login_out"><i class="bi bi-box-arrow-in-left"></i></span><span *ngIf="!login_out"><i class="bi bi-box-arrow-in-right"></i></span> {{Login}}</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<!--Modal-->
+<div >
+<div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true"  >
+  <div class="modal-dialog" >
+    <div class="modal-content fondo">
+      <div class="modal-header">
+        <h5 class="modal-title" id="LoginLabel">Login</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="LoginForm" (ngSubmit)="login()">
+           
+              <label class="form-label" style="padding-right: 15px;">
+                  Usuario: <input type="text"  class="form-control" formControlName="user" required>
+              </label>
+            
+              <label for="contraseña" class="form-label">Contraseña <input type="password" id="contraseña"  class="form-control" formControlName="contra" required></label>
+      
+               <br>
+              <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Ingresar</button>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

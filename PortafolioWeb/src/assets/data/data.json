@@ -1,0 +1,86 @@
+{
+    "id_Perfil":"1",
+    "infoPersonal":{
+      "id_Personal":"1",
+      "Nom":"Luciano", 
+      "Ape":"Nardelli",
+      "email":"nardelli96@gmail.com",
+      "Localidad":"Rosario,Santa Fe",
+      "Redes":{
+        "twitter":"https://twitter.com/",
+        "facebook":"https://www.facebook.com/luciano.nardelli.3/",
+        "instagram":"https://www.instagram.com/",
+        "github":"https://github.com/nardo96hub",
+        "linkedin":"https://www.linkedin.com/in/nardelliluciano/"
+      },
+      "foto":"https://media-exp1.licdn.com/dms/image/C4D03AQHsm2iEvGfD-Q/profile-displayphoto-shrink_200_200/0/1639614448536?e=1657152000&v=beta&t=_rTUm4IfBj9FpOcCaKG84hVcz2lY1rIecFZpwNjtp68",
+      "activo":"true"
+    },
+    "imagen": {
+        "id_Imagen":"1",
+        "portada":"https://concepto.de/wp-content/uploads/2018/09/google-inc-e1537467602232.jpg",
+        "perfil":"https://media-exp1.licdn.com/dms/image/C4D03AQHsm2iEvGfD-Q/profile-displayphoto-shrink_200_200/0/1639614448536?e=1657152000&v=beta&t=_rTUm4IfBj9FpOcCaKG84hVcz2lY1rIecFZpwNjtp68",
+        "activo":"true"
+    },
+    "informacion":"Puesto laboral",
+    "acer":{
+      "id_acer":"1",
+      "acer":"chamuyo",
+      "activo":"true"
+    },
+    "experiencia":[{
+        "id_Exp":"1",
+        "titulo": "Backend Developer",
+        "empresa":"Pixar",
+        "jornada":"Jornada Parcial",
+        "anio":"mar 2019 - actualidad - 2 años y 6 meses",
+        "lugar":"Rosario, Argemtina",
+        "activo":"true"
+    }
+  
+  ],
+  "educacion":[
+    {
+        "id_Edu":"1",
+        "lugar":"UNR",
+        "titulo":"Analista en Sistema",
+        "anio":"2020 - actualidad",
+        "activo":"true"
+    }
+  ],
+  "skill":[
+    {
+        "id_Skill":"1",
+        "lenguaje":"html",
+ 
+        "nivel":"avanzado",
+        "activo":"true"
+    },
+    {
+      "id_Skill":"2",
+      "lenguaje":"CSS",
+      "nivel":"intermedio",
+      "activo":"true"
+  },
+  {
+    "id_Skill":"3",
+    "lenguaje":"ANGULAR",
+    "nivel":"basico",
+    "activo":"false"
+},{
+  "id_Skill":"4",
+  "lenguaje":"java",
+  "nivel":"avanzado",
+  "activo":"true"
+}
+  ],
+  "proyectos":[
+    {
+      "id_Proy":"1",
+      "titulo":"..",
+      "activo":"true"
+    }
+  ],
+  "activo":"true"
+
+  }

@@ -1,0 +1,120 @@
+<div *ngIf="info" [ngClass]="{'oscuro':oscuro}">
+    <h2>Proyectos <span class="icono" *ngIf="Login"><a href="#" class="crear" (click)="inicializar()" data-bs-toggle="modal" data-bs-target="#crearProy"><i class="bi bi-plus-circle-fill"></i></a></span></h2>
+    <div >
+       
+
+        <div *ngFor="let proy of info?.proyecto" id="borrarP">
+            <div class="row">
+                <div class="col-1">
+                    <img src="https://static-exp2.licdn.com/sc/h/dg2aibi617d7fogdpotw5j4hy" alt="" class="imagen">
+
+                </div>
+                
+                <div class="col-11"> 
+                    <p>
+                        <a [href]="proy.link"><span class="titulo">{{proy.nombreP}}</span> 
+                            <a  class="icono" *ngIf="Login">
+                                <span class="icono "><a href="#borraP" class="borrar" (click)="borrarProy(proy)"><i class="bi bi-trash-fill"></i></a></span>
+                            </a>
+                            <a  class="icono" *ngIf="Login">
+                                <span class="icono "><a href="#" class="editar" data-bs-toggle="modal" data-bs-target="#editarProy" (click)="editar_proy(proy)"><i class="bi bi-pencil"> </i></a></span>
+                            </a>
+                            
+                            
+                        </a>
+                    </p>
+                    <p class="descripcion">
+                       {{proy.descripcion}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal-->
+        <!--CrearProyecto -->
+        <div class="modal fade" id="crearProy" tabindex="-1" aria-labelledby="crearProyLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content fondo">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="crearProyLabel">Crear: Proyecto</h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="proyForm" (ngSubmit)="crearProy()">
+                      <div class="row">
+                        <label class="form-label col-12">
+                            Nombre del Proyecto: <input type="text"  class="form-control" formControlName="nombreP">
+                        </label>
+                    </div>
+                      <div class="row">
+                        <label class="form-label col-12">Url del proyecto: 
+                          
+                            <input type="text"  class="form-control " formControlName="url">
+                        </label>
+                      </div>
+                      <div class="row">
+                        <label class="form-label col-12">
+                          Descripcion del Proyecto: <textarea formControlName="descripcion"  class="form-control" cols="20" rows="6"></textarea>
+                        </label>
+                      </div>
+                      
+                      <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Crear</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        <!--EditarProyecto-->
+        <!--Editarlo-->
+        <div class="modal fade" id="editarProy" tabindex="-1" aria-labelledby="editarProyLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content fondo">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editarProyLabel">Editar: Proyecto</h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="proyForm" (ngSubmit)="editarProy()">
+                   
+                    <div class="row">
+                      <label class="form-label col-12">
+                          Nombre del Proyecto: <input type="text" class="form-control" formControlName="nombreP">
+                      </label>
+                    </div>
+                    
+                    <div class="row">
+                      <label class="form-label col-12">Url del proyecto: 
+                                  
+                        <input type="text" class="form-control" formControlName="url">
+                      </label>
+                    </div>
+                    <div class="row">
+                      <label class="form-label col-12">
+                        Descripcion del Proyecto: <textarea formControlName="descripcion" class="form-control" cols="20" rows="6"></textarea>
+                      </label>
+                    </div>
+                    <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Editar</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+
+
+</div>
+

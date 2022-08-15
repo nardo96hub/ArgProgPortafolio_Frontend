@@ -1,0 +1,149 @@
+<div *ngIf="info" [ngClass]="{'oscuro':oscuro}">
+
+   <!--Foto-->
+    <div class="col">
+        <img [src]="info?.imagen?.portada" alt="" class="imgPortada">
+        <img [src]="info?.imagen?.perfil" alt="" class="imgPerfil borde">
+      
+        <span style="font-size: 30px;padding-left:2%;" *ngIf="Login" ><a href="#" class="editar" data-bs-toggle="modal" data-bs-target="#editarInfo" (click)="editar_info()">
+            <i class="bi bi-pencil-square"></i></a>
+        </span>
+    </div>
+  
+    <!--Informacion-->
+    <div class="col Info">
+
+        <p class="nomApe">{{info?.personal?.nom}} {{info?.personal?.ape}}</p>
+        <div style="margin-bottom: 15px;">
+            <p class="email">Email: {{info?.personal?.email}}</p>
+            <p class="info" >{{info?.puesto}}</p>
+            <p class="info">{{info?.personal?.localidad}}</p>
+            
+        </div>
+    </div>
+
+    <!--Modal Actualizar-->
+    <div class="modal fade" id="editarInfo" tabindex="-1" aria-labelledby="editarInfoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content fondo">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editarInfoLabel">Editar: Educacion</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <button class="btn btn-primary" style="margin-right: 10px;" type="button" (click)="cambioBotones('1')" *ngIf="!activador.inf">
+                    Editar Informacion
+                </button>
+                <button class="btn btn-primary"style="margin-right: 10px;" type="button" (click)="cambioBotones('2')" *ngIf="!activador.img">
+                    Editar Fotos
+                </button>
+                <button class="btn btn-primary"style="margin-right: 10px;" type="button" (click)="cambioBotones('3')" *ngIf="!activador.red">
+                    Editar Redes
+                </button>
+
+                <div *ngIf="activador.inf">
+                
+                    <form [formGroup]="infoForm" (ngSubmit)="editarInfo()">
+                        <fieldset><br>
+                            <legend>Editar Informacion Personal</legend>
+                            <div class="row">
+                                <label class="form-label col-12">
+                                    Puesto: <input type="text" class="form-control" formControlName="puesto">
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="form-label col-12">Localidad: 
+                                    <input type="text" formControlName="localidad" class="form-control">
+                                </label>
+                            </div>
+                            
+                          
+                            
+                            <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Editar InfoP</button>
+                        </fieldset>
+                    </form>
+               
+                </div >
+                <div *ngIf="activador.img">
+                
+                    <form [formGroup]="imgForm" (ngSubmit)="editarImagen()">
+                        <fieldset><br>
+                            <legend>Edicion de Fotos</legend>
+                                                       
+                            <div class="row">
+                                
+                                <label class="form-label col-12">
+                                    Portada 
+                                    <input type="text" class="form-control" formControlName="portada" placeholder="Ingrese Url de su Foto de Portada" (keydown)="imagenPortada($event)">
+                                </label>
+                               
+                                
+                                <div class="col-12">
+                                    <button class="btn btn-primary" style="margin-right: 5px;" type="button" (click)="volverPortada()">Volver Foto Original</button>
+                                    <button class="btn btn-warning" type="button" (click)="borrarPortada()">Borrar Foto Actual</button>
+                                    <span *ngIf="portada">
+                                        <img [src]="portada" alt="" class="foto">
+                                    </span>
+                                </div>
+                            
+                            </div><br>
+                            <div class="row">
+                                <label class="form-label col-12">
+                                Perfil <input type="text" class="form-control" formControlName="perfil" placeholder="Ingrese Url de su Foto de Perfil" (keydown)="imagenPerfil($event)">
+                                </label><br>
+                                <div class="col-12">
+                                    <button class="btn btn-primary" style="margin-right: 5px;" type="button" (click)="volverPerfil()">Volver Foto Original</button>
+                                    <button class="btn btn-warning" type="button" (click)="borrarPerfil()">Borrar Foto Actual</button>
+                                    <span *ngIf="perfil">
+                                        <img [src]="perfil" alt="" class="foto">
+                                    </span>    
+                                </div>
+                                
+                            </div>
+                            
+                            <br>
+                            <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Editar Fotos</button>
+                        </fieldset> 
+                    </form>
+                
+                </div >
+                <div *ngIf="activador.red">
+                
+                    <form [formGroup]="redForm" (ngSubmit)="editarRedes()">
+                        <fieldset><br>
+                            <legend>Editar Redes</legend>
+                            <div class="row">
+                                 <label class="form-label col-12">Twitter: 
+                                    <input type="text" class="form-control" formControlName="twi">
+                                </label>
+                                <label class="form-label col-12">Facebook: 
+                                    <input type="text" class="form-control" formControlName="face">
+                                </label>
+                                <label class="form-label col-12">Instagram: 
+                                    <input type="text" class="form-control" formControlName="ins">
+                                </label>
+                                <label class="form-label col-12">Github: 
+                                    <input type="text" class="form-control" formControlName="git">
+                                </label><br>
+                                <label class="form-label col-12">Linkedin: 
+                                    <input type="text" class="form-control" formControlName="link">
+                                </label>   
+                            </div>       
+                            <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Editar Redes</button>
+                        </fieldset>
+                    
+                    </form>
+           
+                </div>
+             
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,133 @@
+<div *ngIf="info" [ngClass]="{'oscuro':oscuro}">
+<h2>Experiencia <a href="#" class="icono crear" (click)="inicializar()"data-bs-toggle="modal" data-bs-target="#crearExp" *ngIf="Login">
+      <i class="bi bi-plus-circle-fill"></i>
+      </a></h2><br>
+<div id="exp" *ngIf="info.experiencia">
+
+    <div  *ngFor="let exp of info.experiencia;let i=index" id="borrarEx">
+      <div class="row">
+        <div class="col-1" style="text-align: right;">
+            <img src="../../../assets/img/icono_experiencia.png" alt="" class="imagen">
+        </div>
+       
+        <div class="col-11" style="text-align: left;" id="exp_1">
+            <span  class="titulo">{{exp.titulo}}</span>
+            <span *ngIf="Login">
+            <a href="#borrarEx" class="icono borrar" (click)="borrarExp(exp)">
+                <i class="bi bi-trash-fill"></i>
+            </a>
+            <a href="#" class="icono editar" data-bs-toggle="modal" data-bs-target="#editarExp" (click)="editar_exp(exp)">
+                <i class="bi bi-pencil"></i>
+            </a>
+            </span>
+
+            <br>
+            <span class="empJor">{{exp.empresa}} - {{exp.jornada}}</span><br>
+            <span  class="infoExtra">{{exp.anio}}</span><br>
+            <span class="infoExtra">{{exp.lugar}}</span><br>
+        
+
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+<!--Modal AgregarExp-->
+<div class="modal fade" id="crearExp" tabindex="-1" aria-labelledby="crearExpLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="crearExpLabel">Crear: Experiencia</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="expForm" (ngSubmit)="crearExp()">
+              <div class="row">
+                <label class="form-label col-12">
+                  Titulo: <input type="text" class="form-control" formControlName="titulo">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Empresa: 
+                  <input type="text" class="form-control" formControlName="empresa">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Jornada: 
+                  <input type="text" class="form-control" formControlName="jornada">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Año de realizacion: 
+                  <input type="text" class="form-control" formControlName="anio">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Lugar: 
+                  <input type="text" class="form-control" formControlName="lugar">
+                </label>
+              </div>
+
+              <button class="btn btn-success mt-3" type="submit">Crear</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--Modal editarExp-->
+<div class="modal fade" id="editarExp" tabindex="-1" aria-labelledby="editarExpLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarExpLabel">Editar: Experiencia</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="expForm" (ngSubmit)="editarExp()">
+              <div class="row">
+                <label class="form-label col-12">
+                  Titulo: <input type="text" class="form-control" formControlName="titulo">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Empresa: 
+                  <input type="text" class="form-control" formControlName="empresa">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Jornada: 
+                  <input type="text" class="form-control" formControlName="jornada">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Año de realizacion: 
+                  <input type="text" class="form-control" formControlName="anio">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Lugar: 
+                  <input type="text" class="form-control" formControlName="lugar">
+                </label>
+              </div>
+                <button class="btn btn-success mt-3" type="submit">Crear</button>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

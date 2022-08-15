@@ -1,0 +1,29 @@
+<div [ngClass]="{'oscuro':oscuro}" class="contenido" >
+    <app-header [info]="datos" (oscuro)="modoOscuro($event)" (log_inou)="ocultarLogin($event)" (evento)="descargar($event)"></app-header>
+    <div #pdf>
+        <div class="row mover" >
+       
+            <app-info [info]="datos" [Login]="login" [oscuro]="oscuro"></app-info>
+        </div> 
+    
+        <div class="row borde" >
+            <app-acerca [info]="datos" [Login]="login" [oscuro]="oscuro"></app-acerca>
+        </div>
+        <div class="row borde" >
+            <app-exp [info]="datos" [Login]="login" [oscuro]="oscuro"></app-exp>
+        </div>
+        <div class="row borde" >
+            <app-edu [info]="datos" [Login]="login" [oscuro]="oscuro"></app-edu>
+        </div>
+        <div class="row borde" >
+            <app-skills [info]="datos" [Login]="login" [oscuro]="oscuro"></app-skills>
+        </div>
+        <div class="row borde">
+            <app-proy [info]="datos" [Login]="login" [oscuro]="oscuro"></app-proy>
+        </div><br>
+    </div>
+    
+    <app-footer [info]="datos" [modo_oscuro]="oscuro"></app-footer>
+
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,120 @@
+<div *ngIf="info" [ngClass]="{'oscuro':oscuro}">
+<h2>Educación <a href="#"(click)="inicializar()" class="icono crear" data-bs-toggle="modal" *ngIf="Login" data-bs-target="#crearEdu">
+<i class="bi bi-plus-circle-fill"></i>
+</a></h2>
+<div *ngIf="info.educacion">
+    
+    <div  *ngFor="let edu of info.educacion;let i=index" id="borrarEd">
+      <div  class="row">
+        <div class="col-1" style="text-align: right;">
+         <img src="../../../assets/img/icono_educacion.png" alt="" class="imagen">
+                
+        </div>
+        
+        <div class="col-11" style="text-align: left;">
+            <p class="titulo">{{edu.lugar}} <span *ngIf="Login" > <a href="#borrarEd" class="icono borrar" (click)="borrarEdu(edu)" >
+            <i class="bi bi-trash-fill"></i>
+        </a>
+        <a href="#" class="icono editar" data-bs-toggle="modal" data-bs-target="#editarEdu" (click)="editar_edu(edu)">
+            <i class="bi bi-pencil"></i>
+        </a>
+                    </span>
+            </p>
+            <p>{{edu.titulo}}</p>
+
+            <p class="descripcion">{{edu.anio}}</p>
+
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<!--Modal AgregarEdu-->
+
+<div class="modal fade" id="crearEdu" tabindex="-1" aria-labelledby="crearEduLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="crearEduLabel">Crear: Educacion</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="eduForm" (ngSubmit)="crearEdu()">
+              <div class="row">
+                <label class="form-label col-12"> Lugar: 
+                  <input type="text" class="form-control" formControlName="lugar">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Titulo: 
+                  <input type="text" class="form-control" formControlName="titulo">
+                </label>
+              </div>
+              <div class="row">
+                <label class="form-label col-12">Anio: 
+                  <input type="text" class="form-control" formControlName="anio">
+                </label>
+              </div>
+              
+              
+             
+           
+              <button class="btn btn-success mt-3" type="submit">Crear</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Modal editarEdu-->
+<div class="modal fade" id="editarEdu" tabindex="-1" aria-labelledby="editarEduLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content fondo">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarEduLabel">Editar: Educacion</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="eduForm" (ngSubmit)="editarEdu()">
+            <div class="row">
+              <label class="form-label col-12">Lugar: 
+                <input type="text" class="form-control" formControlName="lugar">
+              </label>
+            </div>
+            <div class="row">
+              <label class="form-label col-12">Titulo: 
+                <input type="text" class="form-control" formControlName="titulo">
+              </label>
+            </div>
+            <div class="row">
+              <label class="form-label col-12">Anio: 
+                <input type="text" class="form-control" formControlName="anio">
+              </label>
+            </div>
+           
+            
+          
+        
+            <button class="btn btn-success mt-3" type="submit">Editar</button>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+</div>

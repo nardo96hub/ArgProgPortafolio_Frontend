@@ -1,0 +1,80 @@
+.icono{
+    font-size: 25px;
+    float: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+.imagen{    
+    height: 50px;
+    width: 50px;  
+}
+.descripcion{
+    color: rgb(182, 182, 182);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold
+}
+.titulo{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(255, 0, 170);
+}
+p{
+    color:  rgba(226, 214, 41, 0.849);
+    font-weight: bold;
+  }
+h2{
+    color: darkred;
+    font-weight: bold;
+    font-size: 27;
+}
+a{
+    color: aqua;
+}
+.fondo{
+    background-image: url(../../../assets/img/programador_perfil.png);
+    background-size: 100% 100%;
+}
+a.crear{
+    color: rgb(50, 240, 50);
+}
+a.editar{
+    color: rgb(255, 115, 0);
+}
+a.borrar{
+    color: rgb(252, 47, 47);
+}
+h5{
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+}
+label{
+    color:aquamarine;
+    font-style: italic;
+    font-weight: bold;
+    font-size:15px;
+
+}
+.oscuro h2{
+    color: rgb(230, 202, 144);
+    font-weight: bold;
+    font-size: 27;
+}
+.oscuro .descripcion{
+    color: rgb(19, 131, 131);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold
+}
+.oscuro .titulo{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(255, 174, 0);
+}
+.oscuro p{
+    color: rgb(10, 190, 10);
+    font-weight: bold;
+}

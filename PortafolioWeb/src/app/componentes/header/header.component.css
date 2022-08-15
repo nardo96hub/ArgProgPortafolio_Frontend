@@ -1,0 +1,110 @@
+
+.ingresar {
+	
+	width: 20px;
+	padding: 1px;
+	float: right;
+	margin: 20px 6px 0 6px;
+	border: none;
+	font-family: "Poppins";
+}
+
+.logo {
+	height: 60px;
+	width: auto;
+	margin: 10px;
+	margin-left: 20px;
+}
+.bi-facebook:hover{
+    color: blue !important;
+}
+  
+.bi-instagram:hover{
+    color: violet !important;
+}
+  
+.bi-twitter:hover{
+    color: skyblue !important;
+}
+.bi-github:hover{
+    color: rgb(213, 71, 218) !important;
+}
+.bi-linkedin:hover{
+    color: rgb(7, 7, 7) !important;
+}
+.img-responsive {
+    object-fit: cover;
+}
+
+i{
+    color: rgba(4, 83, 21, 0.884)
+}
+
+/* modo oscuro*/
+.modo{
+    background: #343D5B;
+    border-radius:20px ;
+    border: none;
+  
+    outline: none;
+   
+}
+.oscuro nav{
+    background: grey;
+    color: black;
+}
+.oscuro nav .logo{
+    filter: invert(1);
+}
+.oscuro nav svg{
+    color: rgb(174, 140, 230);
+}
+.oscuro nav .btn-success{
+    background-color: rgb(0, 252, 0);
+    color: black;
+}
+.oscuro nav span{
+    color: black !important; 
+}
+.login{
+    background-color: red;
+   
+    color: blue;
+}
+.oscuro nav .login{
+    background-color: red;
+    color: black;
+}
+.fondo{
+    background-image: url(../../../assets/img/programador_perfil.png);
+    background-size: 100% 100%;
+}
+.sol{
+    color: rgb(192, 112, 20);
+}
+.luna{
+    color: grey
+}
+.circulo{
+    color: azure;
+}
+li{
+    margin-left: 8px;
+}
+.desc{
+    text-decoration: none;
+    color: white;
+   
+}
+.oscuro .desc{
+    color: rgb(0, 0, 0);
+}
+h5{
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+}
+label{
+    color:aquamarine;
+    font-style: italic;
+}

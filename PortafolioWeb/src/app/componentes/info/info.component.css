@@ -1,0 +1,104 @@
+/* Informacion*/
+.Info{
+margin-top: 7%;
+}
+.info{
+    color: rgb(202, 189, 189);
+    font-size: 17px;
+}
+.email{
+    color:  rgba(226, 214, 41, 0.849);
+    font-weight: bold;
+    font-size: 18px;
+}
+.nomApe{
+    font-size: 21px;
+    font-weight: bold;
+    color: rgb(255, 0, 170);
+}
+a.editar{
+    color: rgb(255, 115, 0);
+}
+
+.imgPortada {
+    width: 100%;
+    /*display: block;*/
+    height: 250px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-size: cover;
+   
+  
+    
+}
+    
+.imgPerfil {
+    
+    
+    margin-top: -70px;
+    margin-left: 20px;
+    left: 45px;
+    bottom: -20px;
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+}
+.borde{
+    border: 5px solid;
+    border-image-slice: 1;
+	border-width: 3px;
+	border-color: #2ebfa5;
+    
+}
+
+/*  Modal Foto */
+.foto{
+    width: 130px;
+    height: 100px;
+    border: 2px solid blue;
+    margin-left: 10px;
+    border-radius: 15px;
+
+}
+.fondo{
+    background-image: url(../../../assets/img/programador_perfil.png);
+    background-size: 100% 100%;
+}
+h5{
+    color: darkred;
+    font-weight: bold;
+    font-size: 20px;
+}
+label{
+    color:aquamarine;
+    font-style: italic;
+}
+legend{
+    color:  rgba(226, 214, 41, 0.849);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.oscuro .info{
+    color: rgb(39, 196, 196);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold
+}
+.oscuro .nomApe{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(255, 174, 0);
+}
+.oscuro .email{
+    color: rgb(10, 190, 10);
+    font-weight: bold;
+}
+.oscuro .borde{
+    border: 5px solid;
+    border-image-slice: 1;
+	border-width: 3px;
+	border-color: #eb1d0f;
+    
+}
+

@@ -1,0 +1,40 @@
+<div *ngIf="info" [ngClass]="{'oscuro':oscuro}">
+<h2>Acerca de mi<span class="icono">
+  <a href="#" class="editar" data-bs-toggle="modal" data-bs-target="#editarAcer" *ngIf="Login"  (click)="editar_acerca(info.acer)">
+  <i class="bi bi-pen-fill"></i>
+</a> </span></h2>
+<p>{{info.acer.acer}}</p>
+
+</div>
+
+
+<!--Modal editarAcer-->
+
+<div class="modal fade" id="editarAcer" tabindex="-1" aria-labelledby="editarAcerLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content fondo">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarAcerLabel">Editar: Acerca De</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="form" autocomplete="off">
+            <div class="row">
+              <label class="form-label col-12">Acerca de mi:
+                <textarea formControlName="acer" class="form-control"  cols="20" rows="7"></textarea>
+              </label>
+              
+            </div>
+            
+          
+            <button class="btn btn-success mt-3" type="submit"(click)="actualizarAcer()" >Editar</button>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
