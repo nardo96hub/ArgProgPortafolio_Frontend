@@ -69,32 +69,34 @@
 
 <!--Modal-->
 <div >
-<div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true"  >
-  <div class="modal-dialog" >
-    <div class="modal-content fondo">
-      <div class="modal-header">
-        <h5 class="modal-title" id="LoginLabel">Login</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-          <form [formGroup]="LoginForm" (ngSubmit)="login()">
-           
-              <label class="form-label" style="padding-right: 15px;">
-                  Usuario: <input type="text"  class="form-control" formControlName="user" required>
-              </label>
+  <div class="modal fade" id="Login" tabindex="-1" aria-labelledby="LoginLabel" aria-hidden="true"  >
+    <div class="modal-dialog" >
+      <div class="modal-content fondo">
+        <div class="modal-header">
+          <h5 class="modal-title" id="LoginLabel">Login</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="LoginForm" (ngSubmit)="login()">
             
-              <label for="contraseña" class="form-label">Contraseña <input type="password" id="contraseña"  class="form-control" formControlName="contra" required></label>
-      
-               <br>
+              <label class="form-label" style="padding-right: 15px;">
+                  Usuario: <input type="text"  class="form-control" formControlName="user" placeholder="user" required>
+              </label>
+              
+              <label for="contraseña" class="form-label">
+                Contraseña <input type="password" id="contraseña"  class="form-control" formControlName="contra" placeholder="user" required>
+              </label>
+        
+              <br>
               <button class="btn btn-success mt-3" type="submit" data-bs-dismiss="modal">Ingresar</button>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
