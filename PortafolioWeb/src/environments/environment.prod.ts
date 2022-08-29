@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api:'http://miserver.com/api'
+  api:'https://bkdportafolio.herokuapp.com/api'
 };

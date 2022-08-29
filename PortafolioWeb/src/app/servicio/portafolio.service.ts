@@ -24,8 +24,8 @@ export class PortafolioService {
   }
   
   // Acerca
-  actualizarAcerca(acer:Acerca):Observable<Acerca>{
-    return this.http.post<Acerca>(`${this.url}/acerca`,acer)
+  actualizarAcerca(acer:Acerca):Observable<Perfil>{
+    return this.http.put<Perfil>(`${this.url}/acerca`,acer)
   }
   //Informacio
   editarInfoP(per:Perfil):Observable<Perfil>{

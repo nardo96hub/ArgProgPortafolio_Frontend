@@ -32,14 +32,10 @@ export class AcercaComponent implements OnInit {
   ngOnInit(): void {
   }
   actualizarAcer(){
-    const acer=new Acerca(this.form.get('acer')?.value,this.form.get('id')?.value);
-    this.service.actualizarAcerca(acer).subscribe((resul)=>{
-      
-      
-      this.service.obtenerDatos().subscribe((perfil:Perfil)=>{
-        this.info=perfil;
-      })
-    })
+    const acer=new Acerca(this.form.get('id')?.value,this.form.get('acer')?.value);
+    console.log(acer);
+    
+    this.service.actualizarAcerca(acer).subscribe(r=>this.info=r)
 
   }
   editar_acerca(dato:Acerca){
